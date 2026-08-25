@@ -1,0 +1,157 @@
+Build a working web prototype for Smart India Hackathon 2026 Problem Statement SIH26057.
+
+PROJECT:
+AI-powered Side-Scan Sonar Marine Debris Detection System.
+
+IMPORTANT:
+I am a beginner and have only 4 hours.
+Build a simple, reliable prototype rather than a production system.
+
+The prototype should demonstrate this workflow:
+
+SIDE-SCAN SONAR IMAGE
+→ PREPROCESSING
+→ AI/INTELLIGENCE ANALYSIS
+→ ANOMALY DETECTION
+→ ARTIFICIALITY / CONFIDENCE ASSESSMENT
+→ HUMAN VERIFICATION
+→ GEOLOCATION
+→ REPORT
+
+BUILD THESE 3 MAIN SCREENS:
+
+SCREEN 1 — SONAR UPLOAD
+
+Create a professional dashboard where the user can:
+
+• Upload a sonar image
+• See the selected image preview
+• Click "Analyze Sonar"
+
+Include a short explanation:
+"Upload Side-Scan Sonar imagery to identify potential anthropogenic marine debris."
+
+SCREEN 2 — SONAR ANALYSIS / DETECTION
+
+Display the uploaded sonar image.
+
+Show one or more detected anomaly regions using bounding boxes or highlighted regions.
+
+On the right side show:
+
+Detection:
+Potential Marine Debris
+
+AI Confidence:
+87%
+
+Artificiality Score:
+82/100
+
+Evidence:
+✓ Object-like geometry
+✓ Local contrast
+✓ Acoustic-shadow relationship
+✓ Irregular structure
+
+Status:
+Needs Human Verification
+
+Buttons:
+[ CONFIRM ] [ REJECT ]
+
+IMPORTANT:
+If actual ML inference is not feasible within the prototype, create a clearly labelled "Prototype Demonstration Mode" inference layer.
+
+DO NOT falsely claim that simulated results are real AI predictions.
+DO NOT claim scientific accuracy percentages.
+
+The architecture should keep the inference function modular so a trained YOLO/U-Net model can be connected later.
+
+SCREEN 3 — GIS / ANOMALY MAP
+
+Create an interactive map showing several anomaly markers.
+
+When a marker is clicked, show:
+
+Detection ID
+Object Class
+Confidence
+Artificiality Score
+Latitude
+Longitude
+Status
+
+Use clearly labelled DEMO coordinates if actual sonar navigation metadata is unavailable.
+
+Add:
+[ EXPORT REPORT ]
+
+The export should generate a CSV or JSON containing:
+
+Detection ID
+Class
+Confidence
+Artificiality Score
+Latitude
+Longitude
+Status
+Evidence
+
+TECHNICAL REQUIREMENTS:
+
+Use a simple modern web architecture that Replit can run reliably.
+
+Prefer:
+React frontend
+Simple backend only if necessary
+Local/sample data where possible
+
+Do NOT add:
+Kubernetes
+Kafka
+Redis
+authentication
+microservices
+complex cloud infrastructure
+payment systems
+user accounts
+
+The prototype must work first.
+
+DESIGN:
+
+Professional marine technology dashboard.
+
+Use:
+
+Background: deep navy #07121E
+Panels: #102A3A
+Accent: teal #29C9B7
+Secondary accent: cyan #53D3DD
+Warning: amber #F5BE4B
+Text: #F4F9FA
+
+Use sonar imagery, technical panels, anomaly markers and GIS styling.
+
+Make the UI look like a serious marine intelligence system, not a generic AI website.
+
+MOST IMPORTANT:
+
+After building the application:
+
+1. Run it.
+2. Test the complete workflow.
+3. Fix errors automatically.
+4. Make sure image upload works.
+5. Make sure Analyze works.
+6. Make sure detection results appear.
+7. Make sure the map works.
+8. Make sure Confirm/Reject works.
+9. Make sure report export works.
+
+Do not stop at generating code.
+
+I need a WORKING PREVIEW.
+
+Start building now.

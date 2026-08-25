@@ -1,0 +1,172 @@
+The current UI is good. DO NOT redesign it.
+
+I have reviewed the current application and the main remaining problem is functionality.
+
+I want to make the existing prototype genuinely demonstrable.
+
+IMPORTANT:
+Preserve the current UI, layout, colors, typography, navigation and terminology.
+
+DO NOT rebuild the frontend.
+
+IMPLEMENT THE FOLLOWING:
+
+1. DEMONSTRATION SWEEP
+
+The existing "Load demonstration sweep" button should load a bundled sample Side-Scan Sonar image.
+
+Create/use a representative sonar image stored locally in the project.
+
+When the user clicks:
+
+"Load demonstration sweep"
+
+the sonar image should actually appear in the Source Sweep panel.
+
+2. ANALYZE BUTTON
+
+After a sweep is loaded, the existing Analyze button should actually process the image.
+
+Do NOT simply show a fake loading animation followed by predetermined results.
+
+Implement a lightweight computer-vision prototype using actual image processing.
+
+The pipeline should perform:
+
+- grayscale conversion
+- normalization / contrast enhancement
+- noise reduction
+- edge detection
+- thresholding
+- connected-component or contour analysis
+- candidate anomaly extraction
+
+The purpose is to identify regions that differ significantly from their local sonar background.
+
+3. DETECTION OVERLAY
+
+Return the processed image and draw the detected candidate region(s) over the actual sonar image.
+
+Show:
+
+- bounding box or highlighted region
+- detection ID
+- candidate class: "Potential Marine Debris"
+- confidence score derived from measurable image features
+
+IMPORTANT:
+Do NOT claim this is a trained ghost-net classifier.
+
+Label the analysis:
+
+"Prototype Computer Vision Analysis"
+
+4. EVIDENCE PANEL
+
+For every candidate show evidence derived from the image-processing results.
+
+For example:
+
+- Local contrast
+- Object-like geometry
+- Edge density
+- Acoustic-shadow relationship where detectable
+
+Do not invent evidence that was not calculated.
+
+5. HUMAN REVIEW
+
+The existing Confirm / Reject workflow should actually change the detection state.
+
+Possible states:
+
+NEEDS REVIEW
+CONFIRMED
+REJECTED
+
+The state should remain visible in the UI.
+
+6. ANOMALY MAP
+
+When a detection exists, show it on the existing Anomaly Map.
+
+Because real navigation metadata is unavailable, keep the current warning:
+
+"Demo coordinates"
+
+Do NOT pretend these are real sonar coordinates.
+
+Use a clearly labelled demo coordinate for the prototype.
+
+7. REPORT EXPORT
+
+Make the existing report/export functionality actually generate a CSV or JSON file containing:
+
+Detection ID
+Class
+Confidence
+Artificiality Score
+Evidence
+Latitude
+Longitude
+Coordinate Source
+Review Status
+
+Coordinate Source should say:
+
+"Demo"
+
+when real navigation metadata is unavailable.
+
+8. ANALYSIS QUEUE
+
+Make the existing Analysis Queue reflect the current analysis state.
+
+Example:
+
+QUEUED
+ANALYZING
+REVIEW REQUIRED
+CONFIRMED
+REJECTED
+
+9. IMPORTANT ARCHITECTURE
+
+Keep the detection engine modular.
+
+Create a clear function/module such as:
+
+analyzeSonarImage()
+
+This is the prototype computer-vision implementation.
+
+Structure it so that later it can be replaced by:
+
+YOLO / U-Net / other trained sonar model
+
+without changing the UI.
+
+10. TEST EVERYTHING
+
+After implementation, actually test:
+
+Load demonstration sweep
+→ image appears
+→ Analyze
+→ actual image processing occurs
+→ anomaly overlay appears
+→ evidence appears
+→ confidence appears
+→ Confirm/Reject changes state
+→ anomaly appears on map
+→ report exports successfully
+
+DO NOT stop at writing code.
+
+Run the application and fix all errors.
+
+DO NOT add new features.
+
+DO NOT redesign anything.
+
+FUNCTIONALITY ONLY.

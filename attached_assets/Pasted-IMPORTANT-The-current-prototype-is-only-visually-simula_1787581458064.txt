@@ -1,0 +1,114 @@
+IMPORTANT: The current prototype is only visually simulating the analysis process. I need you to FIX THAT NOW.
+
+Do NOT rebuild the project from scratch.
+
+I need a genuinely functional end-to-end DEMO workflow.
+
+CURRENT PROBLEM:
+The user can upload an image, but clicking Analyze only shows a fake loading animation and does not actually process the uploaded image.
+
+IMPLEMENT THIS:
+
+UPLOAD
+↓
+REAL IMAGE PROCESSING
+↓
+DETECTION RESULT
+↓
+RESULT VISUALIZATION
+
+For the prototype, use a lightweight local computer-vision analysis rather than trying to train a large ML model.
+
+When the user uploads a Side-Scan Sonar image:
+
+1. Read the actual uploaded image.
+2. Convert it to grayscale.
+3. Apply contrast enhancement / normalization.
+4. Apply noise reduction.
+5. Detect candidate anomalous regions using image-processing techniques such as:
+   - thresholding
+   - contours
+   - connected components
+   - local contrast
+   - edge detection
+6. Select one or more candidate regions.
+7. Draw the detected region directly on the uploaded sonar image.
+8. Return the processed image to the frontend.
+9. Display:
+   - Detection type: Potential Marine Debris
+   - Confidence score calculated from the image-processing result
+   - Artificiality/anomaly score
+   - Evidence based on measurable image features
+10. Show the detected region visually on the sonar image.
+
+IMPORTANT:
+Do NOT fabricate the claim that this is a trained ghost-net AI model.
+
+Label this clearly as:
+
+"Prototype Sonar Anomaly Detection"
+
+and:
+
+"Computer Vision Prototype"
+
+The architecture must keep the detection function modular so a trained YOLO/U-Net sonar model can replace it later.
+
+BACKEND:
+
+If the current project does not have a backend, add a minimal FastAPI backend.
+
+Create an endpoint such as:
+
+POST /analyze
+
+It should accept the uploaded image and return:
+
+{
+  processed_image,
+  detections: [
+    {
+      id,
+      class,
+      confidence,
+      artificiality_score,
+      bounding_box,
+      evidence
+    }
+  ]
+}
+
+FRONTEND:
+
+When Analyze is clicked:
+
+1. Send the actual uploaded image to /analyze.
+2. Show a short processing state.
+3. Display the ACTUAL processed image returned by the backend.
+4. Display the detected bounding box.
+5. Display the analysis results.
+
+If no meaningful anomaly is found, say:
+
+"No strong anomaly detected"
+
+instead of inventing one.
+
+IMPORTANT:
+
+The application must actually process the uploaded image.
+
+Do NOT simply wait for 2 seconds and display predetermined results.
+
+After implementation:
+- Run the application.
+- Upload a real image.
+- Click Analyze.
+- Verify the backend processes it.
+- Verify the returned image changes.
+- Verify the detection result corresponds to the uploaded image.
+- Fix any errors.
+
+Do not add new visual features yet.
+
+FUNCTIONALITY FIRST.

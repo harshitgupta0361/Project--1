@@ -1,0 +1,22 @@
+{
+  "name": "workspace",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "preinstall": "node -e \"if (!process.env.npm_config_user_agent?.includes('pnpm')) console.warn('Note: pnpm is recommended for this workspace.');\"",
+    "dev": "npx pnpm --parallel --filter \"@workspace/api-server\" --filter \"@workspace/marine-debris-sonar\" run dev",
+    "dev:api": "npx pnpm --filter @workspace/api-server run dev",
+    "dev:web": "npx pnpm --filter @workspace/marine-debris-sonar run dev",
+    "build": "npx pnpm run typecheck && npx pnpm -r --if-present run build",
+    "typecheck:libs": "tsc --build",
+    "typecheck": "npx pnpm run typecheck:libs && npx pnpm -r --filter \"./artifacts/**\" --filter \"./scripts\" --if-present run typecheck"
+  },
+  "private": true,
+  "dependencies": {
+    "@replit/connectors-sdk": "^0.4.1"
+  },
+  "devDependencies": {
+    "prettier": "^3.9.6",
+    "typescript": "~5.9.3"
+  }
+}

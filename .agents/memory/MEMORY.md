@@ -1,0 +1,1 @@
+- [Local sonar computer vision](local-sonar-cv.md) — keep demo detections grounded in real uploaded pixels and label classical CV separately from trained ML.
