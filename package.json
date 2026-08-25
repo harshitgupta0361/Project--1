@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "preinstall": "node -e \"if (!process.env.npm_config_user_agent?.includes('pnpm')) console.warn('Note: pnpm is recommended for this workspace.');\"",
     "dev": "npx pnpm --parallel --filter \"@workspace/api-server\" --filter \"@workspace/marine-debris-sonar\" run dev",
     "dev:api": "npx pnpm --filter @workspace/api-server run dev",
     "dev:web": "npx pnpm --filter @workspace/marine-debris-sonar run dev",
