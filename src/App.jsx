@@ -89,9 +89,7 @@ function Header({ title, onToggleSidebar, sidebarCollapsed }) {
         </button>
 
         <Link href="/" className="brand-badge" data-testid="link-brand">
-          <span className="brand-mark">
-            {/* <Radar size={15} /> */}
-          </span>
+          <img src="/logo.png" alt="Sonaris Logo" className="brand-logo" />
           <span className="brand-title">
             <span className="brand-name">SONARIS</span>
             <span className="brand-sub">MARINE RESEARCH</span>
